@@ -17,6 +17,7 @@ psycopg2-binary
 openai
 langchain
 langchain-community
+langchain-openai
 faiss-cpu
 pymysql
 pdfplumber
