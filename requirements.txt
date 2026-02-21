@@ -21,12 +21,12 @@ langchain-community
 langchain-openai
 langchain-text-splitters
 faiss-cpu
-pymysql
+
 pdfplumber
 pandas
 python-dotenv
 sqlalchemy
-pymysql
+
 
 openai
 langchain
