@@ -8,3 +8,13 @@ sqlparse
 pandas
 scikit-learn
 PyPDF2
+streamlit
+pandas
+python-dotenv
+sqlalchemy
+psycopg2-binary
+
+openai
+langchain
+langchain-community
+faiss-cpu
