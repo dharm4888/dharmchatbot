@@ -18,3 +18,15 @@ openai
 langchain
 langchain-community
 faiss-cpu
+pymysql
+streamlit
+pandas
+python-dotenv
+sqlalchemy
+pymysql
+
+openai
+langchain
+langchain-community
+faiss-cpu
+tiktoken
