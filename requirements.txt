@@ -19,7 +19,7 @@ langchain
 langchain-community
 faiss-cpu
 pymysql
-streamlit
+pdfplumber
 pandas
 python-dotenv
 sqlalchemy
