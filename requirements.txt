@@ -16,6 +16,7 @@ psycopg2-binary
 
 openai
 langchain
+langchain-core
 langchain-community
 langchain-openai
 faiss-cpu
