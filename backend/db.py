@@ -1,31 +1,13 @@
-# backend/db.py
-import os
-from sqlalchemy import create_engine, text
-from sqlalchemy.orm import sessionmaker, declarative_base
-from dotenv import load_dotenv
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
-# Load .env variables
-load_dotenv()
+DATABASE_URL = "sqlite:///./dharmchatbot.db"
 
-# Fetch DATABASE_URL
-DATABASE_URL = os.getenv("DATABASE_URL")
-if not DATABASE_URL:
-    raise ValueError("DATABASE_URL not found in environment")
+engine = create_engine(
+    DATABASE_URL,
+    connect_args={"check_same_thread": False}
+)
 
-# Create engine (MySQL)
-engine = create_engine(DATABASE_URL, future=True)
-
-# Session class
-SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
-
-# Base class for ORM models
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
-
-# Test connection
-if __name__ == "__main__":
-    try:
-        with engine.connect() as conn:
-            result = conn.execute(text("SELECT DATABASE();"))  # ✅ use text()
-            print("✅ Connected to database:", result.scalar())
-    except Exception as e:
-        print("❌ Database connection failed:", e)
